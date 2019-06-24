@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <div id="java"><h1>javacript</h1></div>
+  
+    <button id="btn">btn</button>
+    <div id="text"></div>
+
+    
+    <script>
+document.getElementById('btn').addEventListener
+('click',load);
+function load(){
+    var hr=new XMLHttpRequest;
+    hr.open('GET','file.txt',true);
+
+    hr.onreadystatechange=function(){
+        if(hr.readyState==4 && hr.status==200){
+            document.getElementById('text').innerHTML=hr.responseText;
+        //  console.log(hr)
+        }
+    };
+    hr.send();
+}
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="b">Hello Java</h1>
+    <button id="btn" >Submit</button>
+    <div id="text"></div>
+<h1>get form</h1>
+    <form action="" id="form" method="POST" >
+        name: <input type="text" name="name1" id="name1">
+        <input type="submit" value="submit" id="">
+    </form>
+
+
+    <script>
+   document.getElementById('btn').addEventListener
+   ('click',load);
+   document.getElementById('form').addEventListener
+   ('submit',load);
+   
+   function load(e){
+       e.preventDefault();
+       var name=document.getElementById('name1').value;
+       var para='name='+name;
+       
+       
+
+       var hr=new XMLHttpRequest;
+       hr.open('POST','js4.php',true);
+       hr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+       
+       hr.onreadystatechange=function(){
+           if(hr.readyState==4 && hr.status==200){
+            //  var out=JSON.parse(hr.responseText);
+            //  pageData(out);
+            console.log(hr.responseText);
+           }
+       };
+       hr.send(para);
+   }
+
+//    function pageData(data){
+//        var output='';
+//        for(var i in data){
+//           output +='<ul>'+
+//           '<li>'+data[i].name+'</li>'+
+//           '<li>'+data[i].age+'</li>'+
+//           '</ul>';
+//        }
+//        document.getElementById('text').innerHTML=output;
+//    }
+
+
+
+    </script>
+</body>
+</html>

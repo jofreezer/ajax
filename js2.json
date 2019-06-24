@@ -1,0 +1,27 @@
+[
+    {
+    "name":"joffrey",
+    "age":24,
+    "food":{
+        "likes":["tune","catnit"],
+        "didslikes":["ham","zuch"]
+    }
+    
+        },
+        {
+    "name":"kally",
+    "age":22 , 
+    "food":{
+        "likes":["tune","catnit"],
+        "didslikes":["ham","zuch"]
+    } 
+        },
+        {
+    "name":"dusenge",
+    "age":25 , 
+    "food":{
+        "likes":["tune","catnit"],
+        "didslikes":["ham","zuch"]
+    } 
+        } 
+]  

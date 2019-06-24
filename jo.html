@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">get text file</button>
+    <div id="text"></div>
+
+    <script>
+     document.getElementById('btn').addEventListener
+     ('click',loadText);
+
+     function loadText(){
+        //  console.log("btn clicked");
+        // create XHR object
+        var hr=new XMLHttpRequest();
+        // OPEN =type, url/file,async
+
+        hr.open('GET','contact.php',true);
+        // hr.onload=function(){
+        //     if(hr.status ==200){
+        //     console.log(hr.responseText);
+        //     }
+        // };
+
+        hr.onreadystatechange=function(){
+            if(hr.readyState == 4 && hr.status == 200){
+             console.log(hr.responseText);
+            document.getElementById('text').innerHTML=hr.responseText;
+           
+            }
+        };
+        hr.send();
+     }
+    </script>
+</body>
+</html>
